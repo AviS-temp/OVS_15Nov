@@ -22,3 +22,4 @@
 2022-11-15 09:34:01 - Tomcat started on port(s): 2700 (http) with context path ''
 2022-11-15 09:34:01 - Started OnlineVotingSystemApplication in 5.117 seconds (JVM running for 6.116)
 2022-11-15 11:49:21 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s273ms610µs200ns).
+2022-11-15 14:31:15 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h24m22s678ms425µs700ns).
