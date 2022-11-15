@@ -1,0 +1,67 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="officer-welcome.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#"></a>
+      </div>
+      <ul>
+        <li><a href="#">Officer</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Welcome to the portal</div>
+    <div class="sub_title"></div>
+    <div class="btns">
+  <button type="submit"(click)="viewVoters()">VOTERS</button>
+  <button type="submit"(click)="viewCandidates()">CANDIDATES</button>
+  <button type="button"(click)="toResult()">Results</button>
+
+</div>
+<footer class="officer-logout">
+  <button type="submit"(click)="logout()">LOGOUT</button>
+</footer>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <div>
+  <button type="submit" class="btn btn-danger" (click)="viewVoters()">
+    VOTERS
+  </button>
+  <button type="submit" class="btn btn-dark" (click)="viewCandidates()">
+    CANDIDATES
+  </button>
+  <button id="announce" type="submit" class="btn btn-info" (click)="announce()">
+    ANNOUNCE
+  </button>
+  <button type="submit" class="btn btn-success" (click)="viewResults()">
+    Results
+  </button>
+  <div class="announce" style="display: none" id="msg">
+    <h1>Elections Announced</h1>
+    <h2>Total Candidates - {{ totalC }}</h2>
+    <h2>Total Voters - {{ totalV }}</h2>
+  </div>
+</div>
+
+<footer class="officer-logout">
+  <button type="submit" class="btn btn-danger" (click)="logout()">
+    LOGOUT
+  </button>
+</footer> -->

@@ -1,0 +1,32 @@
+<body>
+<div class="col-md-8">
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Candidate Id</th>
+        <th scope="col">Candidate Form No</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Society</th>
+        <th scope="col">Caste Vote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let candidate of candidates">
+        <td>{{ candidate.candidateId }}</td>
+        <td>{{ candidate.nominationFormNo }}</td>
+        <td>{{ candidate.firstName }}</td>
+        <td>{{ candidate.lastName }}</td>
+        <td>{{ candidate.societyName }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="castedVote(candidate)">
+            Vote
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="warning">{{ warning }}</div>
+<div id="succ" class="success">{{ success_msg }}</div>
+</body>

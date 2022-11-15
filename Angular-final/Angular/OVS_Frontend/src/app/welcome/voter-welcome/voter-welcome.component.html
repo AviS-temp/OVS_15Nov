@@ -1,0 +1,102 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="voter-welcome.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#"></a>
+      </div>
+      <ul>
+        <li><a href="#">User</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Welcome to the portal</div>
+    <div class="sub_title"></div>
+    <div class="btns">
+      <button
+        type="button"
+        
+        (click)="updateDetails(voter.voterIdCardNo)"
+      >
+        UPDATE
+      </button>
+      <button type="button" (click)="viewVoterlist()">VIEW VOTERS</button>
+    
+      <button type="button"(click)="vote(voter.voterIdCardNo)">CAST VOTE</button>
+
+      <button type="button"(click)="toResult()">Results</button>
+
+    </div>
+    
+    <div class="nomination" >
+      Fill Nomination:<input type="checkbox" id="myCheck" (click)="myFunction()" />
+      <button
+        id="nom"
+        style="display: none"
+        type="button"
+        class="btn btn-danger"
+        (click)="fillform()"
+      >
+        FILL NOMINATION
+      </button>
+    </div>
+    
+    <footer>
+      <button type="button"(click)="logout()">LOGOUT</button>
+    </footer>
+    
+
+
+
+
+
+
+
+
+<!-- <div>
+  <button
+    type="button"
+    class="btn btn-success"
+    (click)="updateDetails(voter.voterIdCardNo)"
+  >
+    UPDATE DETAILS
+  </button>
+  <button type="button" class="btn btn-warning" (click)="viewVoterlist()">
+    VIEW VOTERS
+  </button>
+
+  <button
+    type="button"
+    class="btn btn-success"
+    (click)="vote(voter.voterIdCardNo)"
+  >
+    CAST VOTE
+  </button>
+</div>
+
+<div class="nomination">
+  Fill Nomination:<input type="checkbox" id="myCheck" (click)="myFunction()" />
+  <button
+    id="nom"
+    style="display: none"
+    type="button"
+    class="btn btn-danger"
+    (click)="fillform()"
+  >
+    FILL NOMINATION
+  </button>
+</div>
+
+<footer>
+  <button type="button" class="btn btn-info" (click)="logout()">LOGOUT</button>
+</footer> -->

@@ -255,8 +255,9 @@ public class ElectionResultDao  implements ElectionResultService  {
 		double totalVotes = list.size();
 		
 		double pollingPercent = viewVotingPercentage();
+		double y=Math.round(pollingPercent*100.0)/100.0;
 		
-		map.put("PollingPercentage", pollingPercent);
+		map.put("PollingPercentage", y);
 		map.put("totalVotes", totalVotes);
 		
 		List<CooperativeSociety> coopList = cooperativeSocietyRepository.findAll();
@@ -282,12 +283,16 @@ public class ElectionResultDao  implements ElectionResultService  {
 						double i = map.get(c.getSocietyName());
 						i= (i*j)/100;
 						i = i + 1;
-						map.put(c.getSocietyName(), (i*100)/j);
+						double x =(i*100)/j;
+						x=Math.round(x*100.0)/100.0;
+						map.put(c.getSocietyName(), x);
 					}
 					
 					else
 					{
-						map.put(c.getSocietyName(), (100.0)/j);
+						double x =100.0/j;
+						x=Math.round(x*100.0)/100.0;
+						map.put(c.getSocietyName(), x);
 					}
 				}
 			}
@@ -302,11 +307,15 @@ public class ElectionResultDao  implements ElectionResultService  {
 						double i = map.get(n.getFirstName()+" "+n.getLastName());
 						i = (i*t)/100;
 						i = i+1;
-						map.put(n.getFirstName()+" "+n.getLastName(), (i*100)/t);
+						double x =(i*100)/t;
+						x=Math.round(x*100.0)/100.0;
+						map.put(n.getFirstName()+" "+n.getLastName(), x);
 					}
 					else
 					{
-						map.put(n.getFirstName()+" "+n.getLastName(), 100.0/t);
+						double x = 100/t;
+						x=Math.round(x*100.0)/100.0;
+						map.put(n.getFirstName()+" "+n.getLastName(), x);
 					}
 				}
 			}

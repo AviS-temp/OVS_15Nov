@@ -1,0 +1,72 @@
+<div class="container" id="cont">
+  <div class="form-wrapper">
+      <div class="banner">
+          <h1>Hello {{candidate.firstName}}</h1>
+          <p>Update your personal details</p>
+      </div>
+      <div class="green-bg">
+          <button type="button" id="btn" (click)="initFunction()">Sign In</button>
+      </div>
+      <form #registerForm="ngForm" class="signup-form" (ngSubmit)="updateCandidate()">
+          <h1>Nominee Update</h1>
+          <p>Check and Update your information</p>
+          
+          
+          <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="First Name"
+              name="firstName"
+              [(ngModel)]="candidate.firstName"
+              required=""
+              #firstName="ngModel"
+              [class.is-invalid]="firstName.invalid && firstName.touched"
+            />
+            <div *ngIf="firstName.errors && firstName.invalid && firstName.touched">
+              <small class="text-danger" *ngIf="firstName.errors.required"
+                >First Name is required</small
+              >
+            </div>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Last Name"
+            name="lastName"
+            [(ngModel)]="candidate.lastName"
+            required=""
+            #lastName="ngModel"
+            [class.is-invalid]="lastName.invalid && lastName.touched"
+          />
+          <div *ngIf="lastName.errors && lastName.invalid && lastName.touched">
+            <small class="text-danger" *ngIf="lastName.errors.required"
+              >Last Name is required</small
+            >
+          </div>
+        </div>
+          
+        <div class="form-group form-check"></div>
+        <button
+          [disabled]="registerForm.form.invalid"
+          type="submit"
+          class="btn btn-primary">Update
+        </button>
+        <div class="warning">{{ warning }}</div>
+        <div id="succ" class="success">{{ success_msg }}</div>
+
+          <!-- <button type="button">Sign Up</button> -->
+          <!-- <div class="text-center">
+            <p>Not a member? <a routerLink="/register">Register</a></p>
+          </div>
+          <div class="text-center">
+            <p>forgot your password? <a routerLink="/forget">Forgot Password</a></p>
+          </div> -->
+      </form>
+  </div>
+</div>
+
+

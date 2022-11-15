@@ -1,0 +1,74 @@
+
+    <div class="container" id="cont">
+      <div class="form-wrapper">
+          <div class="banner">
+              <h1>Hello Voter!</h1>
+              <p>Enter your details for verification</p>
+          </div>
+          <div class="green-bg">
+              <button type="button" id="btn" (click)="initFunction()">Sign In</button>
+          </div>
+          <form #registerForm="ngForm" class="signup-form" (ngSubmit)="loginVoter()">
+              <h1>Welcome</h1>
+              <p>Use your voter id for Sign In</p>
+              
+              <div class="input-group">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Voter Id"
+                  name="voterId"
+                  [(ngModel)]="voter.voterIdCardNo"
+                  required
+                  pattern=""
+                  #voterId="ngModel"
+                  [class.is-invalid]="voterId.invalid && voterId.touched"
+                />
+                <div *ngIf="voterId.errors && voterId.invalid && voterId.touched">
+                  <small class="text-danger" *ngIf="voterId.errors.required"
+                    >VoterId is required</small
+                  >
+                  <small class="text-danger" *ngIf="voterId.errors.pattern"
+                    >VoterId is in incorrect format</small
+                  >
+                </div>
+              </div>
+              <div class="input-group">
+                  <i class="fas fa-lock"></i>
+                  <input type="password"
+                  id="exampleInputPassword1"
+                  placeholder="Password"
+                  name="password"
+                  [(ngModel)]="voter.password"
+                  required=""
+                  #password="ngModel"
+                  [class.is-invalid]="password.invalid && password.touched"
+                />
+                <div *ngIf="password.errors && password.invalid && password.touched">
+                  <small class="text-danger" *ngIf="password.errors.required"
+                    >Password is required</small
+                  >
+                </div>
+              </div>
+              
+            <div class="form-group form-check"></div>
+            <button
+              [disabled]="registerForm.form.invalid"
+              type="submit"
+              class="btn btn-primary">Login
+            </button>
+              <!-- <button type="button">Sign Up</button> -->
+              <div class="warning">{{ warning }}</div>
+              <div id="succ" class="success">{{ success_msg }}</div>
+              <div class="text-center">
+                <p>Not a member? <a routerLink="/voterRegister">Register</a></p>
+              </div>
+              <div class="text-center">
+                <p>forgot your password? <a routerLink="/voter-forget">Forgot Password</a></p>
+              </div>
+          </form>
+      </div>
+  </div>
+
+

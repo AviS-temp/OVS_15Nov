@@ -1,0 +1,8 @@
+body{
+    background: url('https://img.freepik.com/free-vector/gradient-background-green-tones_23-2148374530.jpg?w=900&t=st=1668165637~exp=1668166237~hmac=57cbf124c725fd9462962866339cf44af86f4bcf33bdb74779034e7a9316e6fc')no-repeat;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }

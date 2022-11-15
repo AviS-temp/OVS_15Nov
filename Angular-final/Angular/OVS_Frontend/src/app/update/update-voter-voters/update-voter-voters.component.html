@@ -1,0 +1,280 @@
+<div class="container" id="cont">
+  <div class="form-wrapper">
+      <div class="banner">
+          <h1>Hello {{voter.firstName}}</h1>
+          <p>Update your personal details</p>
+      </div>
+      <div class="green-bg">
+          <button type="button" id="btn" (click)="initFunction()">Sign In</button>
+      </div>
+      <form #registerForm="ngForm" class="signup-form" (ngSubmit)="updateVoter()">
+          <h1>Update Your Account</h1>
+          <p>Please Check and Update your Information</p>
+          <div class="input-group">
+              <i class="fas fa-user"></i>
+              <input type="text"
+              id="exampleInputPassword1"
+              placeholder="First Name"
+              name="firstName"
+              [(ngModel)]="voter.firstName"
+              required=""
+              pattern="[a-zA-Z/.]{3,10}"
+              #firstName="ngModel"
+              [class.is-invalid]="firstName.invalid && firstName.touched"
+            />
+            <div *ngIf="firstName.errors && firstName.invalid && firstName.touched">
+              <small class="text-danger" *ngIf="firstName.errors.required"
+                >First Name is required</small
+              >
+              <small class="text-danger" *ngIf="firstName.errors.pattern"
+          >First Name is in incorrect format</small
+        >
+            </div>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text"
+            id="exampleInputPassword1"
+            placeholder="Last Name"
+            name="lastName"
+            [(ngModel)]="voter.lastName"
+            required=""
+            pattern="[a-zA-Z/.]{3,15}"
+            #lastName="ngModel"
+            [class.is-invalid]="lastName.invalid && lastName.touched"
+          />
+          <div *ngIf="lastName.errors && lastName.invalid && lastName.touched">
+            <small class="text-danger" *ngIf="lastName.errors.required"
+              >Last Name is required</small
+            >
+            <small class="text-danger" *ngIf="lastName.errors.pattern"
+          >Last Name is in incorrect format</small
+        >
+          </div>
+        </div>
+          <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+              name="email"
+              [(ngModel)]="voter.emailId"
+              required
+              pattern="[a-zA-z_]{1}[a-zA-z_0-9]*[@]{1}[a-z]*[//.]{1}[a-z]*"
+              #email="ngModel"
+              [class.is-invalid]="email.invalid && email.touched"
+            />
+            <div *ngIf="email.errors && email.invalid && email.touched">
+              <small class="text-danger" *ngIf="email.errors.required"
+                >Email is required</small
+              >
+              <small class="text-danger" *ngIf="email.errors.pattern"
+                >Email is in incorrect format</small
+              >
+            </div>
+          </div>
+          <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input type="password"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              name="password"
+              [(ngModel)]="voter.password"
+              required=""
+              #password="ngModel"
+              [class.is-invalid]="password.invalid && password.touched"
+            />
+            <div *ngIf="password.errors && password.invalid && password.touched">
+              <small class="text-danger" *ngIf="password.errors.required"
+                >Password is required</small
+              >
+            </div>
+          </div>
+
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password"
+            id="exampleInputPassword2"
+            placeholder="Confirm Password"
+            name="cpassword"
+            (ngModel)="(voter.password)"
+            required=""
+            #cpassword="ngModel"
+            [class.is-invalid]="password.invalid && password.touched"
+          />
+          <div>
+            <small class="text-danger"
+            id="pwdHelp" 
+            [class.d-none]="password.value == cpassword.value || cpassword.untouched">Passwords Do Not Match
+          </small > 
+        </div>
+          </div>
+
+          <div class="input-group">
+            <i class="fa fa-mobile"></i>
+            <input type="text"
+            id="exampleInputPassword1"
+            placeholder="Contact Number"
+            name="contactNo"
+            [(ngModel)]="voter.mobileno"
+            required
+            pattern="[6-9]{1}[0-9]{9}"
+            #contact="ngModel"
+            [class.is-invalid]="contact.invalid && contact.touched"
+          />
+          <div *ngIf="contact.errors && contact.invalid && contact.touched">
+            <small class="text-danger" *ngIf="contact.errors.required"
+              >Contact Number is Required</small
+            >
+            <small class="text-danger" *ngIf="contact.errors.pattern"
+              >Contact Number is invalid</small
+            >
+          </div>
+        </div>
+        <div class="input-group">
+          <i class="fa fa-mobile"></i>
+          <select 
+          id="exampleInputPassword1"
+          placeholder="Gender"
+          name="gender"
+          [(ngModel)]="voter.gender"
+          required=""
+          #gender="ngModel"
+          [class.is-invalid]="gender.invalid && gender.touched"
+          aria-label="Default select example"
+        >
+        <option selected disabled >select gender</option>
+
+        <option value="Male">
+          Male
+        </option>
+        <option value="Female">
+          Female
+        </option>
+      </select>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="exampleInputPassword1">Gender</label>
+        <select
+          class="form-control"
+          name="gender"
+          [(ngModel)]="voter.gender"
+          #name="ngModel"
+          required
+          aria-label=".form-select-lg example"
+        >
+          <option value="default" selected disabled>Open this select menu</option>
+          <option value="Male">
+            Male
+          </option>
+          <option value="Female">
+            Female
+          </option>
+        </select>
+      </div> -->
+
+      <div class="input-group">
+        <i class="fa fa-mobile"></i>
+        <input type="text"
+        id="exampleInputPassword1"
+        placeholder="Address"
+        name="address"
+        [(ngModel)]="voter.address1"
+        required=""
+        pattern="[0-9a-zA-Z]{3,20}"
+        #address="ngModel"
+        [class.is-invalid]="address.invalid && address.touched"
+      />
+      <div *ngIf="address.errors && address.invalid && address.touched">
+        <small class="text-danger" *ngIf="address.errors.required"
+          >Address is required</small
+        >
+        <small class="text-danger" *ngIf="address.errors.pattern"
+              >Address is invalid</small
+            >
+      </div>
+    </div>
+
+    <div class="input-group">
+      <i class="fa fa-mobile"></i>
+      <input type="text"
+      id="exampleInputPassword1"
+      placeholder="District"
+      name="district"
+      [(ngModel)]="voter.district"
+      required=""
+      pattern="[a-zA-Z]{3,10}"
+      #district="ngModel"
+      [class.is-invalid]="district.invalid && district.touched"
+    />
+    <div *ngIf="district.errors && district.invalid && district.touched">
+      <small class="text-danger" *ngIf="district.errors.required"
+        >District is required</small
+      >
+      <small class="text-danger" *ngIf="district.errors.pattern"
+              >District Name is invalid</small
+            >
+    </div>
+  </div>
+
+  <div class="input-group">
+    <i class="fa fa-mobile"></i>
+    <input type="text"
+    id="exampleInputPassword1"
+    placeholder="Pincode"
+    name="pincode"
+    [(ngModel)]="voter.pincode"
+    required=""
+    pattern="[0-9]{6}"
+    #pincode="ngModel"
+    [class.is-invalid]="district.invalid && district.touched"
+  />
+  <div *ngIf="pincode.errors && pincode.invalid && pincode.touched">
+    <small class="text-danger" *ngIf="pincode.errors.required"
+      >Pincode is required</small
+    >
+    <small class="text-danger" *ngIf="pincode.errors.pattern"
+          >Pincode is invalid</small
+        >
+  </div>
+</div>
+
+    <div class="input-group">
+      <i class="fa fa-mobile"></i>
+      <select
+      id="exampleInputPassword1"
+      placeholder="Society"
+      name="society"
+      [(ngModel)]="voter.society.societyId"
+      required=""
+      #district="ngModel"
+      [class.is-invalid]="district.invalid && district.touched"
+    >
+    <option value="default" disabled>Open this select menu</option>
+        <option *ngFor="let society of coopSociety" [value]="society.societyId">
+          {{ society.societyName }}
+        </option>
+      </select>
+  </div>
+
+        <div class="form-group form-check"></div>
+        <button
+          [disabled]="registerForm.form.invalid"
+          type="submit"
+          class="btn btn-primary"
+        >
+          Register
+        </button>
+        <a routerLink="/register"></a>
+        <div class="warning">{{ warning }}</div>
+        <div id="succ" class="success">{{ success_msg }}</div>
+          <!-- <button type="button">Sign Up</button> -->
+      </form>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,33 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="home.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#"></a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Welcome to the portal</div>
+    <div class="sub_title"></div>
+    <div class="btns">
+  <button type="button" (click)="admin_login()">ADMIN </button>
+  <button type="button" (click)="user_login()"> USER </button>
+  <button type="button"  (click)="officer_login()">OFFICER </button>
+  <button type="button" (click)="voter_login()"> VOTER</button>
+</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+.btn-group {
+    display: flex;
+    justify-content: center;
+}
+
+.body{
+    font-size:medium;
+    font-weight: 500;
+    background: url('https://img.freepik.com/free-vector/gradient-background-green-tones_23-2148374530.jpg?w=900&t=st=1668165637~exp=1668166237~hmac=57cbf124c725fd9462962866339cf44af86f4bcf33bdb74779034e7a9316e6fc');
+    background-size: cover;
+    background-position: center;
+}
+
+button {
+    margin: 15px;
+}
+
+.result-back {
+    position: absolute;
+    bottom: 2%;
+    left: 47%;
+}
+
+.select{
+    width: 30%;
+    height: 30%;
+    background-color: rgba(145, 207, 140, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.t1 {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse:collapse;
+    border: 3px solid;
+    border-spacing: 0;
+    width: 50%;
+    border: 1px solid #ddd;
+    box-shadow: 10px 10px 10px 10px rgba(5, 41, 2, 0.8);    
+    border-radius: 12px 12px 12px 12px;
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    margin-left: 10%;
+    margin-right: auto;
+}
+
+.column {
+    flex: 50%;
+    padding: 10px;
+}
+
+table {
+    
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    box-shadow: 10px 10px 10px 10px rgba(5, 41, 2, 0.8);
+    border-radius: 12px 12px 12px 12px;
+    overflow: hidden;
+    
+}
+
+th,
+td {
+    text-align: center ;
+    padding: 16px;
+}
+
+th {
+    background-color:#005900;
+    color: #fafafa;
+    font-family: 'Open Sans', Sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+tr{
+    
+    width: 100%;
+    background-color: #a9ffa9;
+}
+
+tr:nth-child(even) {
+    background-color: #f2fff2;
+}

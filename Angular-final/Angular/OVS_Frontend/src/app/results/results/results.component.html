@@ -1,0 +1,83 @@
+<body class="body">
+  <h2 style="text-align: center; font-style: italic">Welcome to Results</h2>
+  <br />
+
+  <table class="t1">
+    <tr>
+      <th scope="col">FIELD</th>
+      <th scope="col">VALUE</th>
+    </tr>
+    <tr>
+      <td>Polling Percent</td>
+      <td>{{ pollPercent }}</td>
+      <!--0 because of this-->
+    </tr>
+    <tr>
+      <td>Candidate with Highest Votes :</td>
+      <td>{{ nCH.firstName + " " + nCH.lastName }} Got {{ cH }}% Votes</td>
+      <!--nCH.firstName + " " + nCH.lastName -->
+    </tr>
+    <tr>
+      <td>Candidate with Lowest Votes :</td>
+      <!--14 Nov:: Not printing the number-->
+      <td>{{ nCL.firstName + " " + nCL.lastName }} Got {{ cL }}% Votes</td>
+    </tr>
+    <tr>
+      <td>
+        <select
+          class="select"
+          [(ngModel)]="selectedValue"
+          (ngModelChange)="viewCandidateVotingPercentage(this.selectedValue)"
+        >
+          <option value="default">default</option>
+          <option *ngFor="let candidate of candidates">
+            {{ candidate.candidateId }}
+          </option>
+        </select>
+      </td>
+      <td>{{ votePercent }}</td>
+    </tr>
+  </table>
+
+  <br />
+
+  <div class="row">
+    <div class="column">
+      <div class="col-md-8">
+        <table class="t2">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">FIELD</th>
+              <th scope="col">VALUE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stat of stats | keyvalue">
+              <td>{{ stat.key }}</td>
+              <td>{{ stat.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="col-md-8">
+        <table class="t2">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">FIELD</th>
+              <th scope="col">VALUE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let result of results | keyvalue">
+              <td>{{ result.key }}</td>
+              <td>{{ result.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

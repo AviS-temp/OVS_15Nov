@@ -1,0 +1,22 @@
+.main-footer{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.page-back{
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    color: blue;
+}
+.body{
+    font-size:medium;
+    font-weight: 500;
+    background-image: linear-gradient(rgb(100, 243, 157), rgb(246, 246, 118));
+
+}
