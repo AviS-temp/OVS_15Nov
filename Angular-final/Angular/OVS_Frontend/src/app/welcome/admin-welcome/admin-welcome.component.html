@@ -1,52 +1,43 @@
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!------<title> Website Layout | CodingLab</title>------>
-    <link rel="stylesheet" href="admin-welcome.component.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-   </head>
-<body>
-  <nav>
-    <div class="menu">
-      <div class="logo">
-        <a href="#"></a>
+    <link rel="stylesheet" href="admin-welcome.component.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <a href="#"></a>
+        </div>
+        <ul>
+          <li><a href="#">Admin</a></li>
+        </ul>
       </div>
-      <ul>
-        <li><a href="#">Admin</a></li>
-        
-      </ul>
+    </nav>
+    <div class="img"></div>
+    <div class="center">
+      <div class="title">Welcome to the portal</div>
+      <div class="sub_title"></div>
+      <div class="btns">
+        <button type="button" (click)="createSociety()">ADD SOCIETY</button>
+        <button type="button" (click)="viewVoters()">VOTERS</button>
+        <button type="button" (click)="viewCandidates()">CANDIDATES</button>
+        <button type="button" (click)="viewUsers()">USERS</button>
+        <button type="button" (click)="viewSocieties()">SOCIETIES</button>
+        <button type="button" (click)="addOfficer()">ADD OFFICER</button>
+        <button type="button" (click)="addUser()">ADD USER</button>
+        <button type="button" (click)="toResult()">Results</button>
+        <button type="button" (click)="logout()">Logout</button>
+      </div>
     </div>
-  </nav>
-  <div class="img"></div>
-  <div class="center">
-    <div class="title">Welcome to the portal</div>
-    <div class="sub_title"></div>
-    <div class="btns">
-  <button type="button"(click)="createSociety()">CREATE SOCIETY</button>
-  <button type="button"(click)="viewVoters()">VOTERS</button>
-  <button type="button"(click)="viewCandidates()">CANDIDATES</button>
-  <button type="button"(click)="viewUsers()">USERS</button>
-  <button type="button"(click)="viewSocieties()">SOCIETIES</button>
-  <button type="button"(click)="addOfficer()">ADD OFFICER</button>
-  <button type="button"(click)="addUser()">ADD USER</button>
-  <button type="button"(click)="toResult()">Results</button>
-
-
-</div>
-<footer>
-  <button type="button"(click)="logout()">LOGOUT</button>
-</footer>
-</div>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
 
 <!-- <div>
   <button type="button" class="btn btn-primary" (click)="createSociety()">
